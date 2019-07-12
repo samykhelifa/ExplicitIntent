@@ -21,19 +21,12 @@ public class MainActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* moveToSecondActivity_FirstWay();
-                 Uncomment it to test the method.
-                moveToSecondActivity_SecondWay();*/
+
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(intent);
             }
 
-            private void moveToSecondActivity_FirstWay() {
 
-            }
-
-            private void moveToSecondActivity_SecondWay() {
-            }
         });
 
     }

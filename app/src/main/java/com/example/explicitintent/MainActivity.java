@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                moveToSecondActivity_FirstWay();
+                // moveToSecondActivity_FirstWay();
+                moveToSecondActivity_SecondWay();
             }
 
 
@@ -49,6 +50,18 @@ public class MainActivity extends AppCompatActivity {
         b.putInt(Constants.KEY_AGE, 23);
 
         intent.putExtras(b);
+
+        startActivity(intent);
+    }
+
+    /**
+     * Using Bundle indirectly to store the data to be shared to the Target Activity.
+     */
+    private void moveToSecondActivity_SecondWay() {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+
+        intent.putExtra(Constants.KEY_NAME, nameEditText.getText().toString());
+        intent.putExtra(Constants.KEY_AGE, 23);
 
         startActivity(intent);
     }
